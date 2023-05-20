@@ -19,7 +19,7 @@ header, footer {
     text-align: center;
 }
 
-.start-page h2, .questions h2 {
+h2 {
     font-size: 2.3rem;
     margin-bottom: 2.5%;
     font-weight: bolder;
@@ -37,7 +37,7 @@ p {
     font-weight: bolder;
 }
 
-.questions {
+.questions, .end-page {
     text-align: center;
     display: none;
 }

@@ -11,22 +11,22 @@ var option1El = document.querySelector(".option-1");
 var option2El = document.querySelector(".option-2");
 var option3El = document.querySelector(".option-3");
 var option4El = document.querySelector(".option-4");
-var timerEL = document.querySelector("#timer");
+var timerEl = document.querySelector("#timer");
 var startPageEl = document.querySelector(".start-page");
 var questionsEl = document.querySelector(".questions");
 var endPageEl = document.querySelector(".end-page")
 var startButton = document.querySelector(".start-button");
-var timerSeconds = 90;
+var timerSeconds = 60;
 var timer;
 var started = false;
 
 function countdown (){
     timer = setInterval(function () {
         timerSeconds--;
-        timerEL.textContent = "Time: " + timerSeconds;
+        timerEl.textContent = "Time: " + timerSeconds;
 
         if (timerSeconds === 0) {
-            timerEL.textContent = "";
+            timerEl.textContent = "";
             clearInterval(timer);
             started = false;
         }
@@ -57,7 +57,8 @@ option1El.addEventListener("click", function(event) {
         option4El.textContent = "4. All of the above";
 
     } else if (option1El.textContent !== "1. Strings") {
-        wrongEl.textContent = "Wrong! Please try again";
+        wrongEl.textContent = "Wrong! Please try again!";
+        timerSeconds = timerSeconds - 15;
     } 
     if (option1El.textContent === "1. Yes") {
 
@@ -79,7 +80,7 @@ option2El.addEventListener("click", function(event) {
 
     } else if (option2El.textContent !== "2. Parenthesis") {
         wrongEl.textContent = "Wrong! Please try again!";
-        timerSeconds - 15;
+        timerSeconds = timerSeconds - 15;
     }
 });
 
@@ -91,9 +92,10 @@ option3El.addEventListener("click", function(event) {
         questionsEl.setAttribute("style", "display: none;")
         endPageEl.setAttribute("style", "display: block;")
 
-    } else if (option3El.textContent !== "3. Yes in green") [
+    } else if (option3El.textContent !== "3. Yes in green") {
         wrongEl.textContent = "Wrong! Please try again!";
-    ]
+        timerSeconds = timerSeconds - 15;
+    }
 });
 
 option4El.addEventListener("click", function(event) {
@@ -115,5 +117,8 @@ option4El.addEventListener("click", function(event) {
 
     } else if (option4El.textContent !== "4. All of the above") {
         wrongEl.textContent = "Wrong! Please try again";
+        timerSeconds = timerSeconds - 15;
     }
 });
+
+console.log(timerSeconds)
