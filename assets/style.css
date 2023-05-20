@@ -1,0 +1,57 @@
+* {
+    box-sizing: border-box;
+}
+
+header, footer {
+    margin: 15%;
+}
+
+#highscores {
+    text-decoration: none;
+    color: blueviolet;
+    font-size: 1.3rem;
+    position: absolute;
+    top: 5%;
+    left: 5%;
+}
+
+.start-page {
+    text-align: center;
+}
+
+.start-page h2 {
+    font-size: 2.3rem;
+    margin-bottom: 2.5%;
+    font-weight: bolder;
+}
+
+p {
+    font-size: 1.3rem;
+}
+
+#timer {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    font-size: 1.8rem;
+    font-weight: bolder;
+}
+
+.questions {
+    display: none;
+}
+
+.option-1,
+.option-2,
+.option-3,
+.option-4 {
+    position: relative;
+    left: -20%;
+}
+
+
+.start-button {
+    background-color: greenyellow;
+    margin-top: 2.5%;
+    font-size: 1.3rem;
+}
