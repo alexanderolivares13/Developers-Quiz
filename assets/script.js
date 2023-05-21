@@ -16,6 +16,7 @@ var startPageEl = document.querySelector(".start-page");
 var questionsEl = document.querySelector(".questions");
 var endPageEl = document.querySelector(".end-page")
 var startButton = document.querySelector(".start-button");
+var endButton = document.querySelector("#name-button")
 var timerSeconds = 60;
 var timer;
 var started = false;
@@ -25,7 +26,7 @@ function countdown (){
         timerSeconds--;
         timerEl.textContent = "Time: " + timerSeconds;
 
-        if (timerSeconds === 0) {
+        if (timerSeconds <= 0) {
             timerEl.textContent = "";
             clearInterval(timer);
             started = false;
@@ -87,11 +88,12 @@ option2El.addEventListener("click", function(event) {
 option3El.addEventListener("click", function(event) {
     event.preventDefault();
     event.stopPropagation();
+// if the arguement is true this is the end of question 4, leading the user to the end page.
     if (option3El.textContent === "3. Yes in green") {
         clearInterval(timer)
         questionsEl.setAttribute("style", "display: none;")
         endPageEl.setAttribute("style", "display: block;")
-
+        localStorage.setItem("score", timerSeconds)
     } else if (option3El.textContent !== "3. Yes in green") {
         wrongEl.textContent = "Wrong! Please try again!";
         timerSeconds = timerSeconds - 15;
@@ -121,4 +123,8 @@ option4El.addEventListener("click", function(event) {
     }
 });
 
-console.log(timerSeconds)
+endButton.addEventListener("click", function(event) {
+    event.preventDefault();
+    window.location.href = "./assets/highscores.html"
+
+})

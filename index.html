@@ -17,7 +17,7 @@
         <p id="timer">Time: 60</p>
         <div class="start-page">
             <h2>Developer's JavaScript Quiz</h2>
-            <p>Answer the following JavaScript related questions before the time is up!</p>
+            <p>Answer the following JavaScript related questions before the time is up!<br>Wrong answers will severely lower your time left!</p>
             <button class="start-button">Begin</button>
         </div>
         <div class="questions">
@@ -30,6 +30,13 @@
         </div>
         <div class="end-page">
             <h2>Complete!</h2>
+            <form>
+                <label for="initials">Enter your initials: </label>
+                <input type="text" placeholder="Your initials here" id="name-box"><br>
+               <p> Your score will be saved! </p>
+
+               <input type="submit" value="Submit" id="name-button">
+            </form>
         </div>
         <footer></footer>
     </main>

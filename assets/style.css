@@ -1,3 +1,7 @@
+:root {
+    --green: #adff2f;
+}
+
 * {
     box-sizing: border-box;
 }
@@ -25,7 +29,7 @@ h2 {
     font-weight: bolder;
 }
 
-p {
+p, label {
     font-size: 1.3rem;
 }
 
@@ -42,16 +46,17 @@ p {
     display: none;
 }
 
-.correct, .wrong {
+.correct, .wrong, div form p {
     font-size: 1.3rem;
     color: gray;
+    margin-top: 1%;
 }
 
 .option-1,
 .option-2,
 .option-3,
 .option-4 {
-    background-color: greenyellow;
+    background-color: var(--green);
     font-size: 1.3rem;
     margin: 5px;
     left: -20%;
@@ -59,7 +64,16 @@ p {
 
 
 .start-button {
-    background-color: greenyellow;
+    background-color: var(--green);
     margin-top: 2.5%;
     font-size: 1.3rem;
+}
+
+input {
+    font-size: 1.1rem;
+}
+
+#name-button {
+    background-color: var(--green);
+    margin-top: 1%;
 }
