@@ -4,7 +4,7 @@
 // the first question will be prompted by pushing by unhiding the questions element
 // the remaining questions will be prompted by the textContent being filled after answering a question
 
-var questionhEl = document.querySelector(".question-h2");
+var questionh2El = document.querySelector(".question-h2");
 var correctEl = document.querySelector(".correct");
 var wrongEl = document.querySelector(".wrong");
 var option1El = document.querySelector(".option-1");
@@ -27,31 +27,31 @@ function countdown (){
         timerEl.textContent = "Time: " + timerSeconds;
 
         if (timerSeconds <= 0) {
-            timerEl.textContent = "";
+            timerEl.textContent = "Time: 60";
             clearInterval(timer);
             started = false;
+            questionsEl.setAttribute("style", "display: none;");
+            endPageEl.setAttribute("style", "display: block;");
+            timerSeconds = 0
         }
     }, 1000);
 }
 
-startButton.addEventListener("click", function(event) {
-    event.preventDefault();
+startButton.addEventListener("click", function() {
     if (started) {
         return;
     }
-    started = true;
     startPageEl.setAttribute("style", "display: none;");
     questionsEl.setAttribute("style", "display: block;");
+    started = true;
     countdown();
 });
 
-option1El.addEventListener("click", function(event) {
-    event.preventDefault();
-    event.stopPropagation();
+option1El.addEventListener("click", function() {
     if (option1El.textContent === "1. Strings") {
         correctEl.textContent = "Correct!";
 // Question 3
-        questionhEl.textContent = "What can a variable consist of?";
+        questionh2El.textContent = "What can a variable consist of?";
         option1El.textContent = "1. Functions";
         option2El.textContent = "2. Arrays";
         option3El.textContent = "3. Booleans";
@@ -62,18 +62,18 @@ option1El.addEventListener("click", function(event) {
         timerSeconds = timerSeconds - 15;
     } 
     if (option1El.textContent === "1. Yes") {
-
+        clearInterval(timer);
+        questionsEl.setAttribute("style", "display: none;");
+        endPageEl.setAttribute("style", "display: block;");
     }
 
 });
 
-option2El.addEventListener("click", function(event) {
-    event.preventDefault();
-    event.stopPropagation();
+option2El.addEventListener("click", function() {
     if (option2El.textContent === "2. Parenthesis") {
         correctEl.textContent = "Correct!";
 // Question 2.
-        questionhEl.textContent = "What data type is specified by quotations?";
+        questionh2El.textContent = "What data type is specified by quotations?";
         option1El.textContent = "1. Strings";
         option2El.textContent = "2. Numbers";
         option3El.textContent = "3. Booleans";
@@ -85,12 +85,11 @@ option2El.addEventListener("click", function(event) {
     }
 });
 
-option3El.addEventListener("click", function(event) {
-    event.preventDefault();
-    event.stopPropagation();
+option3El.addEventListener("click", function() {
 // if the arguement is true this is the end of question 4, leading the user to the end page.
     if (option3El.textContent === "3. Yes in green") {
         clearInterval(timer);
+        started = false;
         questionsEl.setAttribute("style", "display: none;");
         endPageEl.setAttribute("style", "display: block;");
     } else if (option3El.textContent !== "3. Yes in green") {
@@ -99,14 +98,11 @@ option3El.addEventListener("click", function(event) {
     }
 });
 
-option4El.addEventListener("click", function(event) {
-    event.preventDefault();
-    event.stopPropagation();
-
+option4El.addEventListener("click", function() {
     if (option4El.textContent === "4. All of the above") {
         correctEl.textContent = "Correct!";
 // Question 4
-        questionhEl.textContent = "Are arrays, functions, and expressions objects?";
+        questionh2El.textContent = "Are arrays, functions, and expressions objects?";
         option1El.textContent = "1. Yes";
         option2El.textContent = "2. No";
         option3El.textContent = "3. Yes in green";

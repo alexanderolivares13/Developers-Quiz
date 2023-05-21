@@ -1,5 +1,6 @@
 :root {
     --green: #adff2f;
+    --gray: gray;
 }
 
 * {
@@ -16,15 +17,19 @@ button {
 
 #highscores {
     text-decoration: none;
-    color: blueviolet;
+    color: blueviolet !important;
     font-size: 1.3rem;
     position: absolute;
     top: 5%;
     left: 5%;
 }
 
-.start-page {
+.start-page, .highscores-table {
     text-align: center;
+}
+
+.start-page p {
+    color: var(--gray);
 }
 
 h2 {
@@ -45,21 +50,22 @@ p, label {
     font-weight: bolder;
 }
 
-.questions, .end-page {
+.questions, .end-page, .lose-page {
     text-align: center;
     display: none;
 }
 
 .correct, .wrong, div form p {
     font-size: 1.3rem;
-    color: gray;
+    color: var(--gray);
     margin-top: 1%;
 }
 
 .option-1,
 .option-2,
 .option-3,
-.option-4 {
+.option-4,
+.lose-button {
     background-color: var(--green);
     font-size: 1.3rem;
     margin: 5px;
@@ -82,12 +88,12 @@ input {
     margin-top: 1%;
 }
 
-.highscores-table {
-    text-align: center;
-}
-
 .highscores-table h2 {
     margin-bottom: 0;
+}
+
+.highscores-table p {
+    color: var(--gray);
 }
 
 .highscores-table ol {
