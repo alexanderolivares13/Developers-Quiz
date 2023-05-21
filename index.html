@@ -13,14 +13,17 @@
 <body>
     <main>
         <header></header>
+<!-- The highscores page at the top left of the webpage -->
         <a href="./assets/highscores.html" id="highscores">View High Scores</a>
         <p id="timer">Time: 60</p>
+<!-- The div that is displayed on page load -->
         <div class="start-page">
             <h2>Developer's JavaScript Quiz</h2>
             <p>Answer the following JavaScript related questions before the time is up!<br>Wrong answers will severely
                 lower your time left!</p>
             <button class="start-button">Begin</button>
         </div>
+<!-- The questions div is hidden at page load and is unhidden once the user hits the begin button -->
         <div class="questions">
             <h2 class="question-h2">A function is invoked with ___. </h2>
             <p class="correct wrong"></p>
@@ -29,6 +32,7 @@
             <button class="option-3">3. Square Brackets</button><br>
             <button class="option-4">4. Quotations</button>
         </div>
+<!-- The end page div is shown when the user answers all the questions correctly or when the timer hits 0 -->
         <div class="end-page">
             <h2>All Done!</h2>
             <form>
