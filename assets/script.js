@@ -50,6 +50,7 @@ startButton.addEventListener("click", function() {
         return;
     }
 // Otherwise, when the startButton is pressed it will hide the start page and reveal the questions <div> as well as invoke the countdown function to start the timer.
+    timerSeconds = 60;
     startPageEl.setAttribute("style", "display: none;");
     questionsEl.setAttribute("style", "display: block;");
     started = true;
